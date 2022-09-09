@@ -5,7 +5,6 @@
  * Return: Always 0 (Success/corrrect)
  */
 int main(void)
-
 { 
 	int i;
 
