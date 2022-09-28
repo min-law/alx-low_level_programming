@@ -19,7 +19,7 @@ int is_palindrome(char *s)
  * @s: string to be checked
  * @start: start index
  * @end: end index
- * @flag: flag to indicate if a string is a plaindrome
+ * @flag: flag to indicate if a string is a palindrome
  *
  * Return: void
  */
@@ -41,7 +41,7 @@ void check(char *s, int start, int end, int *flag)
  *
  * Return: length of string
  */
-int_strlen_recursion - calculates the length of a string
+int _strlen_recursion(char *s)
 {
 	int sum = 0;
 	
