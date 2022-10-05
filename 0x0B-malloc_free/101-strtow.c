@@ -2,9 +2,9 @@
 
 /**
  * len - returns length of str
- * @str: string to be counted
+ *@str: string to be counted
  *
- * @Return: length of the string
+ * Return: length of the string
  */
 
 int len(char *str)
@@ -20,10 +20,10 @@ int len(char *str)
 }
 
 /**
- * num_words - counts the number of word in str
- * @str: string to be used
+ * num_words - counts the number of words in str
+ *@str: string to be used
  *
- * @Return: number of words
+ *Return: number of words
  */
 int num_words(char *str)
 {
@@ -35,7 +35,7 @@ int num_words(char *str)
 		{
 			i++;
 		}
-		else if (((str[i] == ' ') || (str[i] == '\0')) && i && (str[i-11] != ' '))
+		else if (((str[i] == ' ') || (str[i] == '\0')) && i && (str[i - 1] != ' '))
 		{
 			words += 1;
 			i++;
@@ -47,12 +47,14 @@ int num_words(char *str)
 	}
 	return (words);
 }
+
 /**
- * strtow - splits a string into words
- * @str: string to be splitted
+ *strtow - splits a stirng into words
+ *@str: string to be splitted
  *
- * @Return: pointer to the array of splitted words
+ *Return: pointer to the array of splitted words
  */
+
 char **strtow(char *str)
 {
 	char **split;
@@ -65,7 +67,7 @@ char **strtow(char *str)
 	{
 		for (i = 0; i <= len(str) && words; i++)
 		{
-			if ((str[i] == ' ') && (str[i] != '\0'))
+			if ((str[i] != ' ') && (str[i] != '\0'))
 				size++;
 			else if (((str[i] == ' ') || (str[i] == '\0')) && i && (str[i - 1] != ' '))
 			{
@@ -86,7 +88,7 @@ char **strtow(char *str)
 					while (j-- >= 0)
 						free(split[j]);
 					free(split);
-					return(NULL);
+					return (NULL);
 				}
 			}
 		}
