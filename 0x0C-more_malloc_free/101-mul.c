@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _print - moves a string one place to the left and print the string
+ * _print - moves a string one place to the left and prints the string
  * @str: string to move
  * @l: size of string
  *
@@ -27,7 +27,7 @@ void _print(char *str, int l)
 }
 
 /**
- * mul - multiplies a char with a string and places the anwser into dest
+ * mul - multiplies a char with a string and places the answer into dest
  * @n: char to multiply
  * @num: string to multiply
  * @num_index: last non NULL index of num
@@ -47,8 +47,9 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 		mulrem = mul / 10;
 		add = (dest[k] - '0') + (mul % 10) + addrem;
 		addrem = add / 10;
+		dest[k] = add % 10 + '0';
 	}
-	for (addrem += mulrem; k>= 0 && addrem; k++)
+	for (addrem += mulrem; k >= 0 && addrem; k--)
 	{
 		add = (dest[k] - '0') + addrem;
 		addrem = add / 10;
@@ -70,7 +71,7 @@ int check_for_digits(char **av)
 {
 	int i, j;
 
-	for (i= 1; i < 3; i++)
+	for (i = 1; i < 3; i++)
 	{
 		for (j = 0; av[i][j]; j++)
 		{
@@ -80,10 +81,11 @@ int check_for_digits(char **av)
 	}
 	return (0);
 }
+
 /**
  * init - initializes a string
- * @str: string to initialize
- * @l: length of string
+ * @str: sting to initialize
+ * @l: length of strinf
  *
  * Return: void
  */
@@ -103,16 +105,16 @@ void init(char *str, int l)
  *
  * Return: zero, or exit status of 98 if failure
  */
-int main( int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int l1, l2, ln, ti, i;
 	char *a;
 	char *t;
-	char e[] = "ERROR\n";
+	char e[] = "Error\n";
 
 	if (argc != 3 || check_for_digits(argv))
 	{
-		for (ti =0; e[ti]; ti++)
+		for (ti = 0; e[ti]; ti++)
 			_putchar(e[ti]);
 		exit(98);
 	}
@@ -129,12 +131,12 @@ int main( int argc, char *argv[])
 		exit(98);
 	}
 	init(a, ln - 1);
-	for (ti = l2 - 1, i = 0; ti >= 0; i++)
+	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
 	{
 		t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
-		if ( t == NULL)
+		if (t == NULL)
 		{
-			for ( ti = 0; e[ti]; ti++)
+			for (ti = 0; e[ti]; ti++)
 				_putchar(e[ti]);
 			free(a);
 			exit(98);
