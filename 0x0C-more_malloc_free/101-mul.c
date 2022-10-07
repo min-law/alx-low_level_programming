@@ -66,7 +66,7 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
  *
  * @Return: 0 if digits, 1 if not
  */
-int check_for_digits(chaar **av)
+int check_for_digits(char **av)
 {
 	int i, j;
 
@@ -103,12 +103,12 @@ void init(char *str, int l)
  *
  * @Return: zero, or exit status of 98 if failure
  */
-ini main( int argc, char *argv[])
+int main( int argc, char *argv[])
 {
-	int l1, l2. ln, ti, i;
+	int l1, l2, ln, ti, i;
 	char *a;
 	char *t;
-	char e[] = ËRROR\n";
+	char e[] = ERROR\n";
 
 	if (argc != 3 || check_for_digits(argv))
 	{
