@@ -108,7 +108,7 @@ int main( int argc, char *argv[])
 	int l1, l2, ln, ti, i;
 	char *a;
 	char *t;
-	char e[] = ERROR\n";
+	char e[] = "ERROR\n";
 
 	if (argc != 3 || check_for_digits(argv))
 	{
