@@ -26,12 +26,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	else if (new_size == old_size)
-		retrn (ptr);
+		return (ptr);
 
 	p = malloc(new_size);
 	if (p == NULL)
 		return (NULL);
-	if (new_size > old _size)
+	if (new_size > old_size)
 		max = old_size;
 	for (i = 0; i < max; i++)
 		p[i] = oldp[i];
