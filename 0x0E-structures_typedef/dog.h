@@ -1,24 +1,21 @@
-#ifndef STRTYP
-#define STRTYP
+#ifndef DOG_H_FILE
+#define DOG_H_FILE
 
 /**
- * STRUCT dog - structure of a dog
- * @name: name of dog
- * @age: age of dog
- * @owner: ownser of dog
+ * struct dog - structure definition of a dog
+ * @name: dog name
+ * @age: dog age
+ * @owner: owner
  */
-struct dog
+typedef struct dog
 {
-  char *name;
-  float age;
-  char *owner;
-};
+	char *name;
+	float age;
+	char *owner;
+} dog_t;
 
-typedef struct dog dog_t;
-
-void init_dog( struct dog *d, char *name, float age, char *owner);
+void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
-
-#endif /* STRTYP*/
+#endif
